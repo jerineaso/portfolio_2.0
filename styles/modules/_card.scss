@@ -1,0 +1,55 @@
+.card {
+    background-color: $aside-color;
+    color: #fff;
+    transition: transform .2s ease-in-out;
+
+    .arrow_flip {
+        opacity: 0;                  
+        transform-origin: top;
+        transition: transform 0.3s ease-in-out,
+                    opacity   0.3s ease-in-out;
+        pointer-events: none;     
+    }
+
+    .card-text {
+        color: $description-color;
+    }
+
+    .card-img-top {
+        height: 160px;
+        object-fit: cover;
+        border-radius: 5px;
+        padding: 2px;
+    }   
+
+    &:hover {
+        transform: translateY(-2%);
+
+        .arrow_flip {
+            opacity: 1;                  
+            transform: rotate(-125deg);
+        }
+    }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+  width: 1px;
+  height: 100px;
+  background-color:#111;
+  padding: 1px;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -195%;
+  width: 4px;
+  height: 4px;
+  background-color: #fff;
+  padding: 4px;
+  border-radius: 100%;
+  border: 1px solid #fff;
+}

@@ -1,0 +1,46 @@
+.container {
+    max-width: 600px !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.bg-dark {
+    background-color: $bg-color !important;
+}
+
+ul[role="list"] {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 0;
+    
+
+    li {
+        padding: 5px;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+            cursor: context-menu;
+        }
+    } 
+}
+
+.skill_set {
+    background-color: #343639;
+    border-radius: 40px;
+    padding: 5px 15px !important;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    &:not(.no-hover):hover {
+        transform: scale(1.1);
+    }
+}
