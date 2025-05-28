@@ -18,7 +18,7 @@ function init() {
     ScrollTrigger.refresh();
 }
 
-init();
+// init();
 
 // Cursor
 var crsr = document.querySelector(".cursor")
