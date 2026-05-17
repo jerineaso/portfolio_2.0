@@ -21,39 +21,27 @@ function init() {
 // init();
 
 function updateExperienceYears() {
-  const experienceNode = document.getElementById('experience-years');
-  const inlineExperienceNode = document.getElementById('experience-years-inline');
-  if (!experienceNode) {
-    return;
-  }
-
-  const startDate = new Date('2022-08-22T00:00:00');
+  const startDate = new Date('2022-08-22');
   const now = new Date();
   const elapsedMs = now - startDate;
-
-  if (Number.isNaN(elapsedMs) || elapsedMs <= 0) {
-    experienceNode.textContent = '0.0';
-    return;
-  }
-
   const years = elapsedMs / (1000 * 60 * 60 * 24 * 365.2425);
   const formattedYears = years.toFixed(1);
-  experienceNode.textContent = formattedYears;
-  if (inlineExperienceNode) {
-    inlineExperienceNode.textContent = formattedYears;
-  }
-}
 
-updateExperienceYears();
+  ['experience-years', 'experience-years-inline'].forEach(function(id) {
+    const node = document.getElementById(id);
+    if (node) node.textContent = formattedYears;
+  });
+}
 
 function updateCurrentYear() {
   const yearNode = document.getElementById('current-year');
-  if (yearNode) {
-    yearNode.textContent = String(new Date().getFullYear());
-  }
+  if (yearNode) yearNode.textContent = String(new Date().getFullYear());
 }
 
-updateCurrentYear();
+document.addEventListener('DOMContentLoaded', function () {
+  updateExperienceYears();
+  updateCurrentYear();
+});
 
 // Cursor
 var crsr = document.querySelector(".cursor")
@@ -86,24 +74,32 @@ function removeActive(){
   document.querySelectorAll('.menu').forEach(link=> link.parentElement?.classList.remove('active'))
 }
 
-// Scroll-based active menu highlight
+// Scroll-based active menu highlight — picks the section most visible in viewport
 const sections = document.querySelectorAll('.playground section[id]');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      removeActive();
-      const id = entry.target.getAttribute('id');
-      const activeLink = document.querySelector(`.menu[href="#${id}"]`);
-      if (activeLink) {
-        activeLink.parentElement.classList.add('active');
-      }
+
+function setActiveSectionFromScroll() {
+  let closestSection = null;
+  let closestDistance = Infinity;
+
+  sections.forEach(function(section) {
+    const rect = section.getBoundingClientRect();
+    const distance = Math.abs(rect.top);
+    if (rect.top <= window.innerHeight * 0.5 && distance < closestDistance) {
+      closestDistance = distance;
+      closestSection = section;
     }
   });
-}, {
-  threshold: 0.3
-});
 
-sections.forEach(section => observer.observe(section));
+  if (closestSection) {
+    removeActive();
+    const id = closestSection.getAttribute('id');
+    const activeLink = document.querySelector(`.menu[href="#${id}"]`);
+    if (activeLink) activeLink.parentElement.classList.add('active');
+  }
+}
+
+window.addEventListener('scroll', setActiveSectionFromScroll, { passive: true });
+setActiveSectionFromScroll();
 
 // GSAP animations
 gsap.from(".playground", {
