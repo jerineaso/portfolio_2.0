@@ -140,6 +140,23 @@ header {
     margin-top: 100px;
 }
 
+.projects,
+.experience,
+.contact {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    .row {
+        width: 100%;
+    }
+}
+
 .green_dot{
     border-radius: 100%;
     width: 7px;

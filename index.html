@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frontend Engineer with 3.7 years of experience building scalable Angular applications, improving performance, and delivering accessible user interfaces.">
+    <meta property="og:title" content="Jerin Easo Regi | Frontend Engineer">
+    <meta property="og:description" content="Frontend Engineer with 3.7 years of experience in Angular, TypeScript, and modern UI engineering.">
+    <meta property="og:type" content="website">
     <!-- Title -->
-    <title>Jerin Easo Regi | Angular Developer</title> 
+    <title>Jerin Easo Regi | Frontend Engineer (Angular)</title> 
     <!-- Favicon -->
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <!-- Boostrap Link -->
@@ -22,68 +26,82 @@
          <aside>
             <div class="menu_list">
                 <div class="nav-item pointer active">
-                    <a href="#home" class="menu"><i class="fa-solid fa-house-chimney fs-16"></i></a>
+                    <a href="#home" class="menu" aria-label="Go to Home section"><i class="fa-solid fa-house-chimney fs-16"></i></a>
                     <span class="tooltiptext">Home</span>
                 </div>
                 <div class="nav-item pointer">
-                    <a href="#projects" class="menu"><i class="fa-solid fa-suitcase fs-16"></i></a>
+                    <a href="#projects" class="menu" aria-label="Go to Projects section"><i class="fa-solid fa-suitcase fs-16"></i></a>
                     <span class="tooltiptext">Projects</span>
                 </div>
                 <div class="nav-item pointer">
-                    <a href="#experience" class="menu"><i class="fa-solid fa-laptop fs-16"></i></a>
+                    <a href="#experience" class="menu" aria-label="Go to Experience section"><i class="fa-solid fa-laptop fs-16"></i></a>
                     <span class="tooltiptext">Work experience</span>
                 </div>
                 <div class="nav-item pointer">
-                    <a href="#contact" class="menu"><i class="fa-solid fa-envelope fs-16"></i></a>
+                    <a href="#contact" class="menu" aria-label="Go to Contact section"><i class="fa-solid fa-envelope fs-16"></i></a>
                     <span class="tooltiptext">Contact</span>
                 </div>
                 <div class="nav-item pointer">
-                    <a href="./assets/pdf/Jerin Easo Regi CV.pdf" download="Jerin Easo Regi"><i class="fa-regular fa-file fs-16"></i></a>
+                    <a href="./assets/pdf/Jerin Easo Regi CV.pdf" download="Jerin Easo Regi" aria-label="Download resume"><i class="fa-regular fa-file fs-16"></i></a>
                     <span class="tooltiptext">Download CV</span>
                 </div>
                 <div class="nav-item pointer">
-                    <a href="https://jerineaso.github.io/portfolio/" target="_blank"><i class="fa-solid fa-code-compare fs-16"></i></a>
+                    <a href="https://jerineaso.github.io/portfolio/" target="_blank" rel="noopener noreferrer" aria-label="View previous portfolio version"><i class="fa-solid fa-code-compare fs-16"></i></a>
                     <span class="tooltiptext">Old version</span>
                 </div>
             </div>
         </aside>
         <div class="playground">
-            <header class="d-flex align-items-center justify-content-between" id="home">
-            <div class="available_for_work d-flex align-items-center">
-                <span class="green_dot"></span>
-                <p class="fs-16">Available for hire.</p>
-            </div>
-            </header>
-            <main>
-                <h1 class="fw-700 fs-44">Hey, I'm <span style="color: #26ea69;">Jerin</span></h1>
-                <p class="fw-700 fs-44">an <span style="color: #6F6F6F;">Angular Developer</span></p>
-                <p class="fs-16 mt-3">
-                    With 2.5 years of hands-on experience in building scalable web applications using Angular, I specialize in crafting dynamic UI components, optimizing performance, and integrating RESTful APIs. 
-                    Passionate about clean architecture, reusable code, and enhancing user experience through efficient state management and responsive design.
-                </p>
-            </main>
-            <section class="skillset my-4">
-                <ul role="list" class="d-flex align-items-center justify-content-center flex-wrap">
-                    <li class="skill_set no-hover fs-14">#html</li>
-                    <li class="skill_set no-hover fs-14">#css</li>
-                    <li class="skill_set no-hover fs-14">#javascript</li>
-                    <li class="skill_set no-hover fs-14">#angular</li>
-                    <li class="skill_set no-hover fs-14">#typescript</li>
-                </ul>
+            <section id="home" class="" style="min-height: 100vh;">
+                <header class="d-flex align-items-center justify-content-between" style="margin-top: 130px;">
+                    <div class="available_for_work d-flex align-items-center">
+                        <span class="green_dot"></span>
+                        <p class="fs-16">Available for hire.</p>
+                    </div>
+                </header>
+                <main>
+                    <h1 class="fw-700 fs-44">Hey, I'm <span style="color: #26ea69;">Jerin</span></h1>
+                    <p class="fw-700 fs-44">a <span style="color: #6F6F6F;">Frontend Engineer</span></p>
+                    <p class="fs-16 mt-3">
+                        With <span id="experience-years">0.0</span> years of hands-on experience since Aug 2022, I build scalable Angular and TypeScript applications with strong focus on performance, accessibility, and maintainable architecture.
+                        I have delivered reusable UI modules, optimized load-time bottlenecks, and shipped production features in cross-functional teams.
+                    </p>
+                    <!-- <div class="d-flex flex-wrap gap-2 mt-4">
+                        <a class="btn btn-primary px-3" href="./assets/pdf/Jerin Easo Regi CV.pdf" download="Jerin Easo Regi">Download Resume</a>
+                        <a class="btn btn-outline-light px-3" href="#contact">Hire Me</a>
+                    </div> -->
+                </main>
+                <section class="skillset my-4">
+                    <ul role="list" class="d-flex align-items-center justify-content-center flex-wrap">
+                        <li class="skill_set no-hover fs-14">Angular</li>
+                        <li class="skill_set no-hover fs-14">TypeScript</li>
+                        <li class="skill_set no-hover fs-14">JavaScript</li>
+                        <li class="skill_set no-hover fs-14">RxJS</li>
+                        <li class="skill_set no-hover fs-14">NgRx</li>
+                        <li class="skill_set no-hover fs-14">SCSS</li>
+                        <li class="skill_set no-hover fs-14">REST APIs</li>
+                        <li class="skill_set no-hover fs-14">Performance</li>
+                        <li class="skill_set no-hover fs-14">Accessibility</li>
+                        <li class="skill_set no-hover fs-14">Unit Testing</li>
+                        <li class="skill_set no-hover fs-14">Git</li>
+                        <li class="skill_set no-hover fs-14">CI/CD</li>
+                    </ul>
+                </section>
             </section>
-            <hr>
-            <section class="projects" id="projects">
-                <h1 class="fs-16">My Projects</h1>
+            <section class="projects " id="projects" style="min-height: 100vh;">
+                <h1 class="fs-16">Selected Projects</h1>
                 <div class="row mx-auto">
                     <div class="col-sm-12 col-md-6 col-lg-6 my-2">
-                        <a href="https://stmarysharipad.com/" target="_blank">
+                        <a href="https://stmarysharipad.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Church website project in new tab">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title d-flex justify-content-between">
-                                        <h5 class="fs-16">Church website</h5>
+                                        <h5 class="fs-16">Church Website Platform</h5>
                                         <i class="fa-solid fa-arrow-down arrow_flip"></i>
                                     </div>
-                                    <p class="card-text fs-12">This is a landing page I developed for a church client.</p>
+                                    <p class="card-text fs-12 mb-2"><strong>Problem:</strong> Client needed a modern, fast, and mobile-first web presence.</p>
+                                    <p class="card-text fs-12 mb-2"><strong>Built:</strong> Responsive landing experience with clean information hierarchy and optimized media.</p>
+                                    <p class="card-text fs-12"><strong>Impact:</strong> Improved brand presentation and smoother mobile navigation for community updates.</p>
                                 </div>
                                 <img src="assets/images/church.png"
                                     class="card-img-top"
@@ -92,14 +110,16 @@
                         </a>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6 my-2">
-                        <a href="https://jerineaso.github.io/air-kerala-landing/" target="_blank">
+                        <a href="https://jerineaso.github.io/air-kerala-landing/" target="_blank" rel="noopener noreferrer" aria-label="Open Air Kerala website project in new tab">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title d-flex justify-content-between">
-                                        <h5 class="fs-16">Air Kerala website</h5>
+                                        <h5 class="fs-16">Air Kerala Marketing Website</h5>
                                         <i class="fa-solid fa-arrow-down arrow_flip"></i>
                                     </div>
-                                    <p class="card-text fs-12">This is a landing page I developed using basic GSAP animations.</p>
+                                    <p class="card-text fs-12 mb-2"><strong>Problem:</strong> Needed an engaging visual narrative for a new airline concept.</p>
+                                    <p class="card-text fs-12 mb-2"><strong>Built:</strong> Scroll-driven landing page with GSAP animations and responsive content sections.</p>
+                                    <p class="card-text fs-12"><strong>Impact:</strong> Better storytelling flow and stronger first impression for stakeholders.</p>
                                 </div>
                                 <img src="assets/images/air_kerala.png"
                                     class="card-img-top"
@@ -110,19 +130,25 @@
                 </div>
             </section>
             <hr>
-            <section class="experience" id="experience">
+            <section class="experience " id="experience">
                 <h1 class="fs-16 mb-0">My Experience</h1>
                 <div class="row mx-auto">
                     <div class="col-sm-12 col-md-6 col-lg-12 w-100 my-2">
                         <div class="card">
-                            <div class="card-body d-flex">
+                            <div class="card-body d-flex align-items-start">
                                 <div class="timeline"></div>
                                 <div class="data-set" style="margin-left: 15px;">
-                                    <h5 class="fs-16">Associate Software Engineer</h5>
-                                    <div class="card-text fs-12">
-                                        <p>At Skizzle Technolabs</p>
-                                        <p>Aug 2022 - Present</p>
+                                    <h5 class="fs-16">Frontend Engineer - Skizzle Technolabs</h5>
+                                    <div class="card-text fs-12 mb-2">
+                                        <p>Aug 2022 - Present (<span id="experience-years-inline">0.0</span> years)</p>
                                         <p>Remote, Full-time</p>
+                                    </div>
+                                    <div class="card-text fs-12">
+                                        <p>- Built and maintained Angular-based modules for production web applications.</p>
+                                        <p>- Improved UI responsiveness and reduced rendering bottlenecks in key flows.</p>
+                                        <p>- Developed reusable components and shared patterns to speed up delivery.</p>
+                                        <p>- Collaborated with backend and product teams to ship features with clear API contracts.</p>
+                                        <p>- Participated in code reviews and quality improvements for long-term maintainability.</p>
                                     </div>
                                 </div>
                             </div>
@@ -131,8 +157,9 @@
                 </div>
             </section>
             <hr>
-            <section class="contact" id="contact">
+            <section class="contact " id="contact">
                 <h1 class="fs-16">Let's Connect!</h1>
+                <p class="fs-14 mb-3" style="color: #7C7C7C;">Open to frontend engineering roles and freelance opportunities.</p>
                 <form class="row g-1 mt-2 mb-3">
                     <div class="col-md-6">
                         <input type="text" class="form-control fs-14 w-100" id="field1" placeholder="Name" required>
@@ -144,26 +171,26 @@
                         <textarea class="form-control fs-14 w-100" name="field3" id="field3" placeholder="Message"></textarea>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary w-100">Submit</button>
+                        <a class="btn btn-primary w-100" href="mailto:jerineasoregi@gmail.com?subject=Frontend%20Opportunity%20for%20Jerin">Send Email</a>
                     </div>
                 </form>
                 <div class="col-12 my-2">
                     <ul role="list" class="d-flex align-items-center justify-content-center flex-wrap">
                         <li class="skill_set fs-14 pointer">
-                            <a href="https://github.com/jerineaso" target="_blank"><i class="fa-brands fa-github pointer"></i></a>
+                            <a href="https://github.com/jerineaso" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile"><i class="fa-brands fa-github pointer"></i></a>
                         </li>
                         <li class="skill_set fs-14 pointer">
-                            <a href="https://www.instagram.com/_easochayen_/" target="_blank"><i class="fa-brands fa-instagram pointer"></i></a>
+                            <a href="https://www.instagram.com/_easochayen_/" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram profile"><i class="fa-brands fa-instagram pointer"></i></a>
                         </li>
                         <li class="skill_set fs-14 pointer">
-                            <a href="https://www.linkedin.com/in/jerineasoregi/" target="_blank"><i class="fa-brands fa-linkedin-in pointer"></i></a>
+                            <a href="https://www.linkedin.com/in/jerineasoregi/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile"><i class="fa-brands fa-linkedin-in pointer"></i></a>
                         </li>
                     </ul>
                 </div>
             </section>
             <footer>
                 <p class="text-center fs-10" style="color :#7C7C7C">
-                    &copy; 2025
+                    &copy; <span id="current-year">2026</span>
                 </p>
             </footer>
         </div>

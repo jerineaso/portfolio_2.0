@@ -8,7 +8,7 @@ function init() {
     ScrollTrigger.scrollerProxy(".main_container", {
         scrollTop(value) {
             return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+        },
         getBoundingClientRect() {
             return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
         },
@@ -19,6 +19,41 @@ function init() {
 }
 
 // init();
+
+function updateExperienceYears() {
+  const experienceNode = document.getElementById('experience-years');
+  const inlineExperienceNode = document.getElementById('experience-years-inline');
+  if (!experienceNode) {
+    return;
+  }
+
+  const startDate = new Date('2022-08-22T00:00:00');
+  const now = new Date();
+  const elapsedMs = now - startDate;
+
+  if (Number.isNaN(elapsedMs) || elapsedMs <= 0) {
+    experienceNode.textContent = '0.0';
+    return;
+  }
+
+  const years = elapsedMs / (1000 * 60 * 60 * 24 * 365.2425);
+  const formattedYears = years.toFixed(1);
+  experienceNode.textContent = formattedYears;
+  if (inlineExperienceNode) {
+    inlineExperienceNode.textContent = formattedYears;
+  }
+}
+
+updateExperienceYears();
+
+function updateCurrentYear() {
+  const yearNode = document.getElementById('current-year');
+  if (yearNode) {
+    yearNode.textContent = String(new Date().getFullYear());
+  }
+}
+
+updateCurrentYear();
 
 // Cursor
 var crsr = document.querySelector(".cursor")
@@ -37,9 +72,12 @@ document.querySelectorAll('.menu').forEach(link => {
     const target = document.querySelector(targetId);
     if (target) {
       e.preventDefault();
-      setTimeout(() => {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 200);
+      const topOffset = targetId === '#home' ? 120 : 0;
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - topOffset;
+      window.scrollTo({
+        top: Math.max(targetTop, 0),
+        behavior: 'smooth'
+      });
     }
   });
 });
@@ -47,6 +85,25 @@ document.querySelectorAll('.menu').forEach(link => {
 function removeActive(){
   document.querySelectorAll('.menu').forEach(link=> link.parentElement?.classList.remove('active'))
 }
+
+// Scroll-based active menu highlight
+const sections = document.querySelectorAll('.playground section[id]');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      removeActive();
+      const id = entry.target.getAttribute('id');
+      const activeLink = document.querySelector(`.menu[href="#${id}"]`);
+      if (activeLink) {
+        activeLink.parentElement.classList.add('active');
+      }
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+sections.forEach(section => observer.observe(section));
 
 // GSAP animations
 gsap.from(".playground", {
