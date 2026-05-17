@@ -38,10 +38,8 @@ function updateCurrentYear() {
   if (yearNode) yearNode.textContent = String(new Date().getFullYear());
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  updateExperienceYears();
-  updateCurrentYear();
-});
+updateExperienceYears();
+updateCurrentYear();
 
 // Cursor
 var crsr = document.querySelector(".cursor")
